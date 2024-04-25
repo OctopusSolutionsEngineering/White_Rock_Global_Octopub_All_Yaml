@@ -1,0 +1,51 @@
+step "deploy-octopub-database" {
+    name = "Deploy Octopub Database"
+
+    action {
+        action_type = "Octopus.DeployRelease"
+        properties = {
+            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.ProjectId = "octopub-database-yaml"
+        }
+        worker_pool_variable = ""
+    }
+}
+
+step "deploy-octopub-audits" {
+    name = "Deploy Octopub Audits"
+
+    action {
+        action_type = "Octopus.DeployRelease"
+        properties = {
+            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.ProjectId = "octopub-audits-yaml"
+        }
+        worker_pool_variable = ""
+    }
+}
+
+step "deploy-octopub-products" {
+    name = "Deploy Octopub Products"
+
+    action {
+        action_type = "Octopus.DeployRelease"
+        properties = {
+            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.ProjectId = "octopub-products-yaml"
+        }
+        worker_pool_variable = ""
+    }
+}
+
+step "deploy-octopub-frontend" {
+    name = "Deploy Octopub Frontend"
+
+    action {
+        action_type = "Octopus.DeployRelease"
+        properties = {
+            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.ProjectId = "octopub-frontend-yaml"
+        }
+        worker_pool_variable = ""
+    }
+}
