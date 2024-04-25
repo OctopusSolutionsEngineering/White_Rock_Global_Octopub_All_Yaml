@@ -6,6 +6,7 @@ step "deploy-octopub-database" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "Always"
             Octopus.Action.DeployRelease.ProjectId = "octopub-database-yaml"
+            Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
     }
@@ -19,6 +20,7 @@ step "deploy-octopub-audits" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "Always"
             Octopus.Action.DeployRelease.ProjectId = "octopub-audits-yaml"
+            Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
     }
@@ -26,12 +28,14 @@ step "deploy-octopub-audits" {
 
 step "deploy-octopub-products" {
     name = "Deploy Octopub Products"
+    start_trigger = "StartWithPrevious"
 
     action {
         action_type = "Octopus.DeployRelease"
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "Always"
             Octopus.Action.DeployRelease.ProjectId = "octopub-products-yaml"
+            Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
     }
@@ -45,6 +49,7 @@ step "deploy-octopub-frontend" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "Always"
             Octopus.Action.DeployRelease.ProjectId = "octopub-frontend-yaml"
+            Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
     }
