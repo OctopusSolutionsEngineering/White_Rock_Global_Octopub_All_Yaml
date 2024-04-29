@@ -4,7 +4,7 @@ step "deploy-octopub-database" {
     action {
         action_type = "Octopus.DeployRelease"
         properties = {
-            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-database-yaml"
             Octopus.Action.RunOnServer = "false"
         }
@@ -18,7 +18,7 @@ step "deploy-octopub-audits" {
     action {
         action_type = "Octopus.DeployRelease"
         properties = {
-            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-audits-yaml"
             Octopus.Action.RunOnServer = "false"
         }
@@ -33,7 +33,7 @@ step "deploy-octopub-products" {
     action {
         action_type = "Octopus.DeployRelease"
         properties = {
-            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-products-yaml"
             Octopus.Action.RunOnServer = "false"
         }
@@ -47,7 +47,7 @@ step "deploy-octopub-frontend" {
     action {
         action_type = "Octopus.DeployRelease"
         properties = {
-            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
+            Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-frontend-yaml"
             Octopus.Action.RunOnServer = "false"
         }
