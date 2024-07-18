@@ -6,6 +6,7 @@ step "deploy-octopub-database" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-database-yaml"
+            Octopus.Action.DeployRelease.Variables = "{\"Octopus.ServiceNow.ChangeRequest.Number\":\"#{Octopus.ServiceNow.ChangeRequest.Number}\"}"
             Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
@@ -20,6 +21,7 @@ step "deploy-octopub-audits" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-audits-yaml"
+            Octopus.Action.DeployRelease.Variables = "{\"Octopus.ServiceNow.ChangeRequest.Number\":\"#{Octopus.ServiceNow.ChangeRequest.Number}\"}"
             Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
@@ -35,6 +37,7 @@ step "deploy-octopub-products" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-products-yaml"
+            Octopus.Action.DeployRelease.Variables = "{\"Octopus.ServiceNow.ChangeRequest.Number\":\"#{Octopus.ServiceNow.ChangeRequest.Number}\"}"
             Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
@@ -49,6 +52,7 @@ step "deploy-octopub-frontend" {
         properties = {
             Octopus.Action.DeployRelease.DeploymentCondition = "IfNotCurrentVersion"
             Octopus.Action.DeployRelease.ProjectId = "octopub-frontend-yaml"
+            Octopus.Action.DeployRelease.Variables = "{\"Octopus.ServiceNow.ChangeRequest.Number\":\"#{Octopus.ServiceNow.ChangeRequest.Number}\"}"
             Octopus.Action.RunOnServer = "false"
         }
         worker_pool_variable = ""
