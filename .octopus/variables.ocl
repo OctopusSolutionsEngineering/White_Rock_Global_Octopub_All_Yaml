@@ -1,0 +1,3 @@
+variable "Octopus.ServiceNow.ChangeRequest.Number" {
+    value {}
+}
